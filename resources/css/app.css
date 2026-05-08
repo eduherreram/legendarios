@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-900 antialiased;
+    }
+}
+
+@layer components {
+    .lm-shell {
+        @apply min-h-screen;
+    }
+
+    .lm-guest-bg {
+        background:
+            radial-gradient(1200px circle at 10% 10%, rgba(255, 255, 255, 0.28), transparent 55%),
+            radial-gradient(900px circle at 90% 0%, rgba(255, 255, 255, 0.20), transparent 50%),
+            radial-gradient(900px circle at 70% 90%, rgba(0, 0, 0, 0.10), transparent 55%),
+            linear-gradient(135deg, #f97316 0%, #ea580c 55%, #c2410c 100%);
+    }
+
+    .lm-guest-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+            radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+            radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+        background-size: 26px 26px, 40px 40px;
+        background-position: 0 0, 13px 13px;
+        opacity: 0.28;
+        mix-blend-mode: soft-light;
+    }
+
+    .lm-sidebar {
+        @apply bg-gradient-to-b from-orange-600 to-orange-700 text-white;
+    }
+
+    .lm-sidebar-brand {
+        @apply flex items-center gap-3;
+    }
+
+    .lm-sidebar-badge {
+        @apply flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white ring-1 ring-white/20;
+    }
+
+    .lm-sidebar-section-title {
+        @apply px-3 text-xs font-semibold uppercase tracking-wider text-white/70;
+    }
+
+    .lm-sidebar-section {
+        @apply rounded-xl bg-white/5 p-1 ring-1 ring-white/10;
+    }
+
+    .lm-sidebar-section-trigger {
+        @apply flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-white/80 transition hover:bg-white/10 hover:text-white;
+    }
+
+    .lm-sidebar-link {
+        @apply block rounded-lg px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/15 hover:text-white transition;
+    }
+
+    .lm-sidebar-link-active {
+        @apply bg-white/15 text-white;
+    }
+
+    .lm-sidebar-link-disabled {
+        @apply cursor-not-allowed rounded-xl px-3 py-2 text-sm font-medium text-white/40;
+    }
+
+    .lm-sidebar-panel {
+        @apply mt-10 rounded-2xl bg-white/10 p-4 ring-1 ring-white/15;
+    }
+
+    .lm-topbar {
+        @apply sticky top-0 z-10 border-b border-slate-200/70 bg-white/80 backdrop-blur;
+    }
+
+    .lm-container {
+        @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .lm-main {
+        @apply py-8;
+    }
+
+    .lm-card {
+        @apply rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70;
+    }
+
+    .lm-card-header {
+        @apply px-5 py-4 border-b border-slate-200/70;
+    }
+
+    .lm-card-body {
+        @apply p-5;
+    }
+
+    .lm-input {
+        @apply w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-200;
+    }
+
+    .lm-select {
+        @apply w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-200;
+    }
+
+    .lm-btn {
+        @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition;
+    }
+
+    .lm-btn-primary {
+        @apply lm-btn bg-slate-900 text-white hover:bg-slate-800;
+    }
+
+    .lm-btn-brand {
+        @apply lm-btn bg-orange-600 text-white hover:bg-orange-700;
+    }
+
+    .lm-btn-ghost {
+        @apply lm-btn border border-slate-200 bg-white text-slate-800 hover:bg-orange-50;
+    }
+
+    .lm-icon-btn {
+        @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:bg-orange-50;
+    }
+}
